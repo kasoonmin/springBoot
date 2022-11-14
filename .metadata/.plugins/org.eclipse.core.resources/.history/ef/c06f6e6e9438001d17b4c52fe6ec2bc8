@@ -1,0 +1,8 @@
+package com.springboot.goods.vo;
+
+import org.springframework.stereotype.Component;
+
+@Component("lodgingdetailVO")
+public class lodgingdetail {
+
+}

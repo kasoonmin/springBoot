@@ -1,0 +1,6 @@
+package mybatis.mappers;
+
+public class Snippet {
+	public void deleteGoods(int goodId)
+}
+

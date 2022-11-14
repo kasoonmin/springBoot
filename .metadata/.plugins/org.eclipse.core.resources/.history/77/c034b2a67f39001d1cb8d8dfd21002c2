@@ -1,0 +1,15 @@
+package com.springboot.goods.service;
+
+import java.util.Map;
+
+import com.springboot.goods.vo.lodgingdetailVO;
+
+public interface GoodsService {
+	public int goodsWrite(Map articleMap);
+
+	public int lodgingdetail(lodgingdetailVO lodging);
+//
+//	public void updateGoods(GoodsVO vo);
+//
+//	public void deleteGoods(int goodId);
+}

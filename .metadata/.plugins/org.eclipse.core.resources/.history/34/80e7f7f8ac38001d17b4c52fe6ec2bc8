@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 1200px;
+            margin: 0px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filter_wrap {
+            width: 300px;
+            float: left;
+            font-size: 15px;
+            line-height: 1.5;
+            visibility: visible;
+            outline: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative ;
+            top: 40px;
+            z-index: 1;
+            margin: 0 32px 0 31px;
+            padding-bottom: 10px;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            
+            
+            background: #fff;
+                  
+        }
+        .btn_wrap1 button{
+            width: 130px;
+            height: 35px;
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 40px;
+            background-color:#007ac9 ;
+            cursor: pointer;
+            border: none;
+            
+        }
+
+
+        .fix_title {
+            margin-top: 10px;
+        }
+
+        section ul li {
+            list-style: none;
+            display: inline-block;
+            width: 120px;
+        }
+
+        section div p {
+            display: inline-block;
+        }
+
+        section strong {
+            margin-top: 30px;
+        }
+
+        .hide_type {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .cnt_people {
+            display: inline-block;
+            margin-bottom: 30px;
+            margin-left: 30px;
+        }
+
+        .check_in_out {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .check_in_out input {
+            margin-left: 15px;
+        }
+
+        .list_wrap {
+
+            visibility: visible;
+            outline: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            width: 635px;
+            margin-top: 43px;
+            float: left;
+
+        }
+
+
+        .btn_wrap {
+
+            font-size: 14px;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.87);
+            -webkit-text-size-adjust: none;
+            visibility: visible;
+            text-align: center;
+            outline: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            float: left;
+            width: 546px;
+            height: 40px;
+           
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn_wrap button{
+           
+            width: 125px;
+            height: 30px;
+            background-color: #007ac9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+
+        }
+
+        .btn_map{
+            width: 85px;
+            height: 30px;
+            background-color: rgb(255, 167, 38);
+            border: none;
+            color: #fff;
+        }
+
+        .list_2 {
+            visibility: visible;
+            outline: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            list-style: none;
+            overflow: hidden;
+            position: relative;
+            height: 280px;
+
+        }
+
+        .stage {
+            visibility: visible;
+            list-style: none;
+            color: #fff;
+            outline: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.66) 100%);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+            padding: 0 24px;
+        }
+
+        .evt_info {
+
+            font-size: 14px;
+            line-height: 1;
+            -webkit-text-size-adjust: none;
+            visibility: visible;
+            list-style: none;
+            outline: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            max-width: 70%;
+            background: rgba(0, 0, 0, 0.4);
+            color: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            top: 24px;
+            left: 10px;
+
+            height: 24px;
+
+        }
+
+        .name {
+
+            font-size: 14px;
+            line-height: 1;
+            -webkit-text-size-adjust: none;
+            visibility: visible;
+            list-style: none;
+            color: #fff;
+            outline: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            width: 65%;
+            position: absolute;
+            bottom: 20px;
+            left: 24px;
+        }
+
+        .score {
+
+            -webkit-text-size-adjust: none;
+            visibility: visible;
+            list-style: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            outline: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: keep-all;
+            white-space: nowrap;
+            padding-bottom: 2px;
+            font-size: 20px;
+            color: rgb(255, 167, 38);
+            height: auto;
+            margin-top: 7px;
+            line-height: normal;
+        }
+
+        .price {
+
+            font-size: 14px;
+            line-height: 1;
+            -webkit-text-size-adjust: none;
+            visibility: visible;
+            list-style: none;
+            color: #fff;
+            outline: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 20px;
+            right: 24px;
+            text-align: right;
+        }
+
+        .map_html {
+            font-size: 14px;
+            line-height: 1;
+            -webkit-text-size-adjust: none;
+            visibility: visible;
+            list-style: none;
+            color: #fff;
+            text-align: right;
+            outline: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="soon">
+        <div class="filter_wrap">
+            <section class="date_wrap">
+                <h3>날짜</h3>
+                <div class="btn_date"><span class="date_view"><b>9.13 ~ 9.14</b><em>&nbsp;·&nbsp;1박</em></span></div>
+            </section>
+            <hr>
+
+            <h3>상세조건</h3>
+            <div class="btn_wrap1">
+                <button type="button" onclick="window.location.href='#'">초기화</button>
+                <button type="submit">적용</button>
+            </div>
+            <section><strong>호텔·리조트 유형</strong>
+                <ul>
+                    <li><input type="checkbox" id="grade_0" name="grade[]" class="inp_chk" value="STAR5"
+                            checked=""><label for="grade_0" class="label_chk">호텔</label></li>
+                    <li><input type="checkbox" id="grade_1" name="grade[]" class="inp_chk" value="S1"><label
+                            for="grade_1" class="label_chk">펜션</label></li>
+                    <li><input type="checkbox" id="grade_2" name="grade[]" class="inp_chk" value="S"><label
+                            for="grade_2" class="label_chk">게스트하우스</label></li>
+                </ul>
+            </section>
+            <section><input type="hidden" id="persons" name="persons" value=""><strong>인원</strong>
+                <div class="cnt_people" data-min="2" data-max="10" data-def="2"><button type="button"
+                        class="disable dn">-</button><span>2</span><button type="button" class=" up">+</button></div>
+            </section>
+
+            <section><input type="hidden" id="persons" name="persons" value=""><strong>침대 갯수</strong>
+                <div class="cnt_people" data-min="2" data-max="10" data-def="2"><button type="button"
+                        class="disable dn">-</button><span>2</span><button type="button" class=" up">+</button></div>
+            </section>
+
+            <!-- 수정 해야함 -->
+            <section class="check_in_out"><strong>Check In</strong><input type="time" id="persons" name="persons"
+                    value="">
+            </section>
+
+            <section class="check_in_out"><strong>Check Out</strong><input type="time" id="persons" name="persons"
+                    value="">
+            </section>
+
+            <!-- <section><input type="hidden" id="persons" name="persons" value=""><strong>Check Out</strong>
+            <div class="cnt_people" data-min="2" data-max="10" data-def="2"><button type="button"
+                    class="disable dn">-</button><span>2</span><button type="button" class=" up">+</button></div>
+        </section> -->
+            <hr>
+            <section><strong>베드 타입</strong>
+                <div class="room_type">
+                    <p><input type="checkbox" class="inp_room_01" name="bed_type[0]" id="bed_type_S" value="S"><label
+                            for="bed_type_S" class="label_room_01">싱글</label></p>
+                    <p><input type="checkbox" class="inp_room_02" name="bed_type[1]" id="bed_type_D" value="D"><label
+                            for="bed_type_D" class="label_room_02">더블</label></p>
+                    <p><input type="checkbox" class="inp_room_03" name="bed_type[2]" id="bed_type_T" value="T"><label
+                            for="bed_type_T" class="label_room_03">트윈</label></p>
+                    <p><input type="checkbox" class="inp_room_04" name="bed_type[3]" id="bed_type_O" value="O"><label
+                            for="bed_type_O" class="label_room_04">온돌</label></p>
+                </div>
+                <hr>
+            </section>
+            <section><strong>공용시설</strong>
+                <ul class="hide_type half">
+                    <li><input type="checkbox" id="tmino_1" name="tmino[]" class="inp_chk" value="42" checked=""><label
+                            for="tmino_1" class="label_chk">수영장</label></li>
+                    <li><input type="checkbox" id="tmino_4" name="tmino[]" class="inp_chk" value="46"><label
+                            for="tmino_4" class="label_chk">레스토랑</label></li>
+                    <li><input type="checkbox" id="tmino_19" name="tmino[]" class="inp_chk" value="195"><label
+                            for="tmino_19" class="label_chk">주차장</label></li>
+                    <li><input type="checkbox" id="tmino_22" name="tmino[]" class="inp_chk" value="335"><label
+                            for="tmino_22" class="label_chk">온천</label></li>
+
+                </ul>
+            </section>
+            <hr>
+            <section><strong>객실 내 시설</strong>
+                <ul class="hide_type half">
+                    <li><input type="checkbox" id="tmino_24" name="tmino[]" class="inp_chk" value="43"><label
+                            for="tmino_24" class="label_chk">객실스파</label></li>
+                    <li><input type="checkbox" id="tmino_26" name="tmino[]" class="inp_chk" value="47"><label
+                            for="tmino_26" class="label_chk">와이파이</label></li>
+                    <li><input type="checkbox" id="tmino_28" name="tmino[]" class="inp_chk" value="197"><label
+                            for="tmino_28" class="label_chk">TV</label></li>
+                    <li><input type="checkbox" id="tmino_29" name="tmino[]" class="inp_chk" value="198"><label
+                            for="tmino_29" class="label_chk">에어컨</label></li>
+                    <li><input type="checkbox" id="tmino_30" name="tmino[]" class="inp_chk" value="199"><label
+                            for="tmino_30" class="label_chk">냉장고</label></li>
+                    <li><input type="checkbox" id="tmino_33" name="tmino[]" class="inp_chk" value="202"><label
+                            for="tmino_33" class="label_chk">드라이기</label></li>
+                </ul>
+            </section>
+            <hr>
+            <section><strong>기타</strong>
+                <ul class="hide_type half">
+                    <li><input type="checkbox" id="tmino_36" name="tmino[]" class="inp_chk" value="54"><label
+                            for="tmino_36" class="label_chk">반려견동반</label></li>
+                    <li><input type="checkbox" id="tmino_37" name="tmino[]" class="inp_chk" value="51"><label
+                            for="tmino_37" class="label_chk">조식포함</label></li>
+                    <li><input type="checkbox" id="tmino_48" name="tmino[]" class="inp_chk" value="207"><label
+                            for="tmino_48" class="label_chk">편의점</label></li>
+                    <li><input type="checkbox" id="tmino_49" name="tmino[]" class="inp_chk" value="336"><label
+                            for="tmino_49" class="label_chk">장애인편의시설</label></li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="list_wrap">
+            <div class="top_sort">
+
+                <!-- Mobile-->
+                <!-- <div class="mobile">
+                    <button type="button" class="" onclick="filter_open();">상세조건</button>
+                    <button type="button" onclick="sort_open();" class="mob_sort">추천 순</button>
+                                                    <button type="button" onclick="pop_map_m();">지도</button>
+                                            </div> -->
+
+                <!-- PC-->
+                <div class="pc">
+                    <div class="btn_wrap width_4">
+                        <button type="button" data-sort="HIT" class="on"><span>추천 순</span></button>
+                        <button type="button" data-sort="DISTANCE" class=""><span>거리 순</span></button>
+                        <button type="button" data-sort="LOWPRICE" class=""><span>낮은 가격 순</span></button>
+                        <button type="button" data-sort="HIGHPRICE" class=""><span>높은 가격 순</span></button>
+                    </div>
+                    <button type="button" class="btn_map" onclick="pop_map_pc();">지도</button>
+                </div>
+            </div>
+
+            <div id="poduct_list_area">
+                <!-- 인기추천 -->
+                <div class="title">
+                    <h3>인기추천&nbsp;</h3>
+                </div>
+                <!-- <li class="list_2 adcno2">
+    <a href="#" data-ano="55178" data-adcno="2" data-alat="37.5108160533" data-alng="127.0469072932" data-distance="8.66" data-affiliate="1">
+    <p class="pic">
+        <img class="lazy align" data-original="//image.goodchoice.kr/resize_1000X500x0/affiliate/2022/03/02/621f44656de6a.jpg" src="//image.goodchoice.kr/resize_1000X500x0/affiliate/2022/03/02/621f44656de6a.jpg" alt="호텔 크레센도 서울" style="margin-top: -159px; display: block;">
+    </p>
+    <div class="stage gra_black_vertical">
+                        <div class="name">
+            <div class="badge"><span class="build_badge" style="color: rgba(255,255,255,1); background-color: rgba(106,120,141,1);">3성급</span></div>                    <strong>호텔 크레센도 서울</strong>
+            <p class="score">
+                <em>8.6</em>&nbsp;<span>만족해요</span>&nbsp;(579)                    </p>
+            <p>
+                강남구 | 선정릉역 부근                    </p>
+        </div>
+        <div class="price">
+            <div class="map_html">
+                <p><em class="mark"><span><b>남은 객실 2개</b><i>&nbsp;</i></span></em><b>99,000원</b></p>                    </div>
+            <p><em class="mark"><span><b>남은 객실 2개</b><i>&nbsp;</i></span></em><b>99,000원</b></p>                </div>
+    </div>
+    </a>
+    </li> -->
+                <li class="list_2 adcno2">
+                    <a href="#" data-ano="70224" data-adcno="2" data-alat="37.501255515614" data-alng="127.03545577263"
+                        data-distance="8.84" data-affiliate="1">
+                        <p class="pic">
+                            <img class="lazy align"
+                                data-original="#"
+                                src="#"
+                                alt="AC 호텔 바이 메리어트 서울 강남" style="margin-top: -159px; display: block;">
+                        </p>
+                        <div class="stage gra_black_vertical">
+                            <div class="name">
+                                <strong>AC 호텔 바이 메리어트 서울 강남</strong>
+                                <p class="score">
+                                    <em>9.3</em>&nbsp;<span>추천해요</span>&nbsp;(11)
+                                </p>
+                                <p>
+                                    강남구 | 역삼역 도보 1분 </p>
+                            </div>
+                            <div class="price">
+                                <div class="map_html">
+                                    <p><b>198,000원</b></p>
+                                </div>
+                                <p><b>198,000원</b></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="list_2 adcno2">
+                    <a href="#" data-ano="7936" data-adcno="2" data-alat="37.504648078747" data-alng="127.04126217435"
+                        data-distance="8.844" data-affiliate="1">
+                        <p class="pic">
+                            <img class="lazy align"
+                                data-original="#"
+                                src="#"
+                                alt="신라스테이 역삼" style="margin-top: -159px; display: block;">
+                        </p>
+                        <div class="stage gra_black_vertical">
+                            <div class="name">
+                                <strong>신라스테이 역삼</strong>
+                                <p class="score">
+                                    <em>9.1</em>&nbsp;<span>추천해요</span>&nbsp;(1028)
+                                </p>
+                                <p>
+                                    강남구 | 역삼역 도보 10분 </p>
+                            </div>
+                            <div class="price">
+                                <div class="map_html">
+                                    <p><b>115,940원</b></p>
+                                </div>
+                                <p><b>115,940원</b></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+
+                <li class="list_2 adcno2">
+                    <a href="#" data-ano="48567" data-adcno="2" data-alat="37.5057036193" data-alng="127.0515501689"
+                        data-distance="9.353" data-affiliate="1">
+                        <p class="pic">
+                            <img class="lazy align"
+                                data-original="#"
+                                src="#"
+                                alt="L7 강남 바이 롯데" style="margin-top: -159px; display: block;">
+                        </p>
+                        <div class="stage gra_black_vertical">
+                            <div class="name">
+                                <strong>L7 강남 바이 롯데</strong>
+                                <p class="score">
+                                    <em>9.5</em>&nbsp;<span>추천해요</span>&nbsp;(753)
+                                </p>
+                                <p>
+                                    강남구 | 선릉역 도보 1분 </p>
+                            </div>
+                            <div class="price">
+                                <div class="map_html">
+                                    <p><b>128,700원</b></p>
+                                </div>
+                                <p><b>128,700원</b></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="list_2 adcno2">
+                    <a href="#" data-ano="6826" data-adcno="2" data-alat="37.505110022615" data-alng="127.05706890975"
+                        data-distance="9.741" data-affiliate="1">
+                        <p class="pic">
+                            <img class="lazy align"
+                                data-original="#"
+                                src="#"
+                                alt="이비스 스타일 앰배서더 강남" style="margin-top: -159px; display: block;">
+                        </p>
+                        <div class="stage gra_black_vertical">
+                            <div class="name">
+                                <strong>이비스 스타일 앰배서더 강남</strong>
+                                <p class="score">
+                                    <em>9.2</em>&nbsp;<span>추천해요</span>&nbsp;(1291)
+                                </p>
+                                <p>
+                                    강남구 </p>
+                            </div>
+                            <div class="price">
+                                <div class="map_html">
+                                    <p><b>107,520원</b></p>
+                                </div>
+                                <p><b>107,520원</b></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

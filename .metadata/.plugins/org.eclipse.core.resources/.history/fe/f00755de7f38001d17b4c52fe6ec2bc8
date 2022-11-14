@@ -1,0 +1,263 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/addMemberForm.css"/>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+   	 	var _IS_ID_CHECK_TF = false;
+   
+        $(document).ready(function(){
+            /* 중복 확인 버튼 */
+            $('#btn_nor').on("click", function(e){
+                e.preventDefault();
+                procDoubleCheck();
+            });
+
+			$("#email_type").on('change', function(e){
+                $(this).val() !== "NONE" && $("#userId").val().indexOf("@") >= 0 && $("#userId").val("");
+                $("#userId").trigger('change').focus();
+            });
+
+            $("#userId").off('keyup').on('keyup', function(e){
+                var id = $(this).val();
+				var email_type = $("#email_type").val();
+				var format1 = /^[a-z0-9]+$/;
+				var format2 = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;
+
+				if(id.length > 0) {
+					if(format1.test(id) && id.length < 6) {
+						document.getElementById("idChk1").style.display="block";
+					} else {
+						document.getElementById("idChk1").style.display="none";
+					}
+
+					if(format2.test(id) && email_type !== 'NONE') {
+						$(this).val(id.replace(format2, ''));
+						alert('특수 문자 입력이 불가능 합니다!');
+					}
+				}
+            });
+            
+            /* 숫자만 입력 받는 이벤트 */
+            $('#userBirth').off('keyup').on('keyup', function(e){
+                if (!(e.keyCode >= 48 && e.keyCode <= 57)) {
+                    $(this).val($(this).val().replace(/[^(0-9)]/gi, ''));
+                }
+            });
+            
+            /* 최대 입력 글자 수 제한 이벤트 */
+            $('#userPhoneNumber, #userBirth').off('input').on('input', function(e){
+                var maxLength = $(this).attr('maxLength');
+                if ($(this).val().length > maxLength){
+                    $(this).val($(this).val().slice(0, maxLength));
+                }
+            });
+
+			$('#userPwd1').off('keyup').on('keyup', function(e){
+				var pwd1 = $("#userPwd1").val();
+
+				if (pwd1.length > 0){
+	
+					var cnt = 0;
+					var format1 = /[0-9]/;
+					if(format1.test(pwd1)){ // 아니면 cnt 증가
+						cnt ++ ;
+					}
+
+					var format2 = /[a-zA-Z]/;
+					if(format2.test(pwd1)){
+						cnt ++ ;
+					}
+
+					var format3 = /[~?!@#$%<>^&*\()\-=+_\’\:\;\.\,\"\'\[\]\{\}\/\|\`]/gi;
+					if(format3.test(pwd1)){
+						cnt ++ ;
+					}
+
+					if((cnt >= 2 && pwd1.length >= 10) || (cnt >= 3 && pwd1.length >= 8)){
+						$("#custPassChk").val("Y");
+						document.getElementById("pwdChk1").style.display="none";
+					} else {
+						document.getElementById("pwdChk1").style.display="block";
+						$("#custPassChk").val("N");
+					}
+				} else {
+					$("#custPassChk").val("N");
+				}
+			     
+			});
+        
+
+            $('#userPwd2').off('keyup').on('keyup', function(){
+				var pwd1 = $("#userPwd1").val();
+                var pwd2 = $("#userPwd2").val();
+				
+                if (pwd2.length > 0){
+                    if (pwd1 === pwd2){
+						document.getElementById("pwdChk2").style.display="none";
+                    } else {
+                        document.getElementById("pwdChk2").style.display="block";
+                    }
+                }
+            });
+
+
+          //이름은 한글 영어만
+		  	$('#userName').off('keyup').on('keyup', function(){
+                var inputVal = $(this).val();
+				var format1 = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;
+
+                if(format1.test(inputVal)){
+                    $(this).val(inputVal.replace(format1, ''));
+					
+                    return false;
+                } else if($(this).val().length <= 1){
+                    document.getElementById("nameChk1").style.display="block";
+                    return false;
+                }
+				
+				document.getElementById("nameChk1").style.display="none";
+            });
+        });
+
+        function procDoubleCheck() {
+			/* 이메일 아이디 생성 */
+        	var id = $("#userId").val();
+			var emailId = $("#userId").val();
+			if ($("#email_type").val() !== "NONE") {
+				emailId += "@"+$("#email_type").val();
+			}
+
+            $.ajax({
+                    url:"${contextPath}/member/overlapCheck.do",
+                    type:"post",
+                    async: false,
+                    data : {id : emailId},
+                    success: function(data, textStatus) {
+                        if(data.re === "true") {
+                            _IS_ID_CHECK_TF = true; // 사용 가능
+                            $('#userId').val(id);
+                            alert("[ "+id+" ]\n 사용 가능한 아이디입니다.");
+                            return;
+                        }else{
+                            _IS_ID_CHECK_TF = false;
+                        	$('#userId').val("");
+                            alert("[ "+id+" ]\n 사용할 수 없는 아이디입니다.");
+                            return false;
+                        } 
+                    },
+                    error: function(request, status, error) {
+						alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					}
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="contents_area">        
+            <div class="soon">
+                <div class="top_block">
+                    <a href="/"><img src="/img/logo.png" alt="날잡아" class="top_logo"></a>
+                </div>
+                <h1><strong>회원가입</strong></h1>
+                <hr>
+                
+                <div class="contents">			
+                    <div class="block">
+                        <input type="hidden" id="custPassChk">
+                        <input type="hidden" id="smsCertChk">
+                        <input type="hidden" id="smsCertChkVal">
+                  
+                        <form id="frm" method="post" action="${contextPath }/member/addMember.do" >          
+							<span class="input_row">
+								<span class="input_grp input_row_email">
+		                            <input type="text" class="inp_email" placeholder="이메일" title="이메일 입력" id="userId" name="userId" maxlength="30" required />
+		                            <span class="gol_wrap"> @ </span>
+		                            <select name="email_type" id="email_type" class="input_select_email">
+		                            	<option value="NONE">직접입력</option>
+		                                <option value="naver.com">naver.com</option>
+		                                <option value="google.com">gmail.com</option>
+		                                <option value="daum.com">daum.com</option>
+		                                <option value="hanmail.net">hanmail.net</option>
+		                            </select>
+									<input type="button" class="btn_nor" id="btn_nor" value="중복확인"> 
+								</span>
+								<p class="txt_check" id="idChk1"> - 아이디는 영소문자,숫자 조합으로 6자리 이상 </p>
+	                        </span>              
+	                        <span class="input_row">
+	                            <span class="input_grp">
+	                                <input type="password" class="inp_pw" name="userPwd" id="userPwd1" placeholder="비밀번호(영문 숫자 특수문자 조합, 8~16자리)" title="비밀번호 입력" required>                            
+	                            	<p class="txt_check" id="pwdChk1">   - 영문,숫자,특수문자 중 2가지 종류이상을 조합으로 10자리 이상
+																	<br >- 영문,숫자,특수문자 중 3가지 종류이상을 조합으로 8자리 이상 </p>
+	                            </span>
+	                        </span>
+	                        <span class="input_row">
+	                            <span class="input_grp">
+	                                <input type="password" class="inp_pw" name="userPwd2" id="userPwd2" placeholder="비밀번호 확인" title="비밀번호  재입력">
+	                            	<p class="txt_check" id="pwdChk2">- 비밀번호와 비밀번호 확인이 불일치합니다!</p>
+	                            </span>
+	                        </span>
+	                        
+	                        <span class="input_row">
+	                            <span class="input_grp">
+	                                <input type="text" class="txt" placeholder="이름(실명)" title="이름 입력" id="userName" name="userName" maxlength="13" required>
+	                            	<p class="txt_check" id="nameChk1">- 이름은 2글자 이상 입력</p>
+	                            </span>
+	                        </span>
+	                        <!-- 얼럿메시지 시 해당 엘리먼트에 wrong 클래스 추가-->
+	                        <span class="input_row">
+	                            <span class="input_grp">
+	                                <input type="number" class="item_phone" placeholder="휴대폰번호(숫자만 입력)" name="userPhoneNumber" id="userPhoneNumber" maxlength="11">
+	                            </span>
+	                            <button type="button" class="btn_nor btn_nor1" tabindex="8" onclick="smsEachCertNum()">인증번호 발송</button>                 	
+	                        </span>
+	                       
+	                        <span class="input_row" style="display:none;" id="inputCert">
+	                            <span class="input_grp">
+	                                <input type="tel" class="count" placeholder="인증번호(숫자만 입력)" id="btnWrite" maxlength="6">
+	                                <span class="count_num">03:00</span>
+	                            </span>
+	                            <button type="button" class="btn_nor" id="smsCheckBtn">확인</button> 
+	                        </span>
+	                        
+	                        <span class="input_row">
+	                            <span class="input_grp">
+	                                <input type="number" class="item_lft item_lft1" id="userBirth" name="userBirth" placeholder="생년월일 (예 : 19900101)" title="생년월일 입력">
+	                                <ul class="form_align">
+	                                    <li><span><input type="radio" id="sex1" name="userGender" value="M"><label for="sex1"><span></span>남</label></span></li>
+	                                    <li><span><input type="radio" id="sex2" name="userGender" value="F"><label for="sex2"><span></span>여</label></span></li>
+                                  <input type="hidden" id="genderCd" name="genderCd">
+	                                </ul>
+	                            </span>
+	                        </span>
+	                        
+	                        </div>
+	                        <div class="agreement">
+	                            <label for="a"><input type="checkbox" id="check_a"> (선택)개인정보 수집 및 이용 동의</label><br>
+	                            <label for="b"><input type="checkbox" id="check_b"> (선택)마케팅 정보 수신동의 </label>
+	                         </div>
+	                       
+	                        <div class="btn_block">
+	                            <input type="submit" class="btn_block_input" value="가입하기"><input class="btn_block_input" type="reset" value="다시입력">
+	                        </div>
+                        </form>
+                    </div>
+                                    
+                </div>
+            </div>
+</div>
+    
+</body>
+</html>

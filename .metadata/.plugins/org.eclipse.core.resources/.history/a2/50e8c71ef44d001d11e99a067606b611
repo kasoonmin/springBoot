@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/businessPage.css"/>
+</head>
+<body>
+    <div class="contents_area">
+        <h2 class="business_title">사업자 페이지</h2>
+            <div class="contents">
+                <div class="business">
+                <div class="business_1">
+                  <a href="#"><img src="/img/businessicon1.png">정보 수정</a>
+                </div>
+                 </div>
+
+                 <div class="business">
+                <div class="business_1">
+                  <a href="${contextPath }/goods/goodsList.do"><img src="/img/businessicon2.png">상품 정보</a>
+                </div>
+                </div>
+
+                <div class="business">
+                <div class="business_1">
+                    <a href="${contextPath}/order/bOrderCheck.do"><img src="/img/businessicon3.png">예약 현황</a>
+                </div>
+                </div>
+
+                <div class="business">
+                <div class="business_1">
+                    <a href="#"><img src="/img/businessicon4.png">매출 현황</a>
+                </div>
+                 </div>
+            </div>
+    </div>
+
+    
+</body>
+</html>

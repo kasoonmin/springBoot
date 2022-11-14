@@ -1,0 +1,5 @@
+package com.springboot.goods.vo;
+
+public class lodgingdetail {
+
+}

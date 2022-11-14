@@ -1,0 +1,9 @@
+package com.springboot.goods.service;
+
+import com.springboot.goods.vo.GoodsVO;
+
+public interface GoodsService {
+	public void insertGoods(GoodsVO vo);
+
+	public void updateGoods(GoodsVO vo);
+}

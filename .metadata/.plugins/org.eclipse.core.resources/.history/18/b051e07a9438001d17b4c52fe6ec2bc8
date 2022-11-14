@@ -1,0 +1,27 @@
+package com.springboot.goods.vo;
+
+import org.springframework.stereotype.Component;
+
+@Component("lodgingdetailVO")
+public class lodgingdetail {
+	private int goodsId;
+	private int numOfTourist;
+	private String TV;
+	private String wifi;
+	private String refrigerator;
+	private int checkIn;
+	private int checkOut;
+	private String bedType;
+	private int bedAmount;
+	private String airConditioner;
+	private String swimmingPool;
+	private String breakfast;
+	private String spar;
+	private String hairAppliance;
+	private String petsAllowed;
+	private String store;
+	private String disabledAccessibility;
+	private String park;
+	private int lodgingType;
+
+}

@@ -1,0 +1,179 @@
+package com.springboot.goods.vo;
+
+import java.sql.Date;
+
+import org.springframework.stereotype.Component;
+
+@Component("goodsVO")
+public class GoodsVO {
+	private int uid;
+	private int goodsId;
+	private String goodsName;
+	private int goodsPrics;
+	private int eventId;
+	private int goodsDiscount;
+	private String goodsMainCategory;
+	private String goodsSubCategory;
+	private String goodsState;
+	private String goodsInfo;
+	private String goodsReturnPolicy;
+	private String goodsCompanyInfo;
+	private Date goodsStart;
+	private Date goodsEnd;
+	private int goodsCount;
+	private int adminAllow;
+	private String companyName;
+
+	public GoodsVO() {
+
+	}
+
+	// 상품등록할때 사용
+	public GoodsVO(String goodsName, int goodsPrics, String goodsMainCategory, String goodsSubCategory,
+			String companyName, String goodsInfo) {
+		this.goodsName = goodsName;
+		this.goodsPrics = goodsPrics;
+		this.goodsMainCategory = goodsMainCategory;
+		this.goodsSubCategory = goodsSubCategory;
+		this.goodsInfo = goodsInfo;
+		this.companyName = companyName;
+		this.goodsCompanyInfo = goodsCompanyInfo;
+
+	}
+
+	public int getGoodsId() {
+		return goodsId;
+	}
+
+	public void setGoodsId(int goodsId) {
+		this.goodsId = goodsId;
+	}
+
+	public int getUid() {
+		return uid;
+	}
+
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+
+	public String getGoodsName() {
+		return goodsName;
+	}
+
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
+	}
+
+	public int getGoodsPrics() {
+		return goodsPrics;
+	}
+
+	public void setGoodsPrics(int goodsPrics) {
+		this.goodsPrics = goodsPrics;
+	}
+
+	public int getEventId() {
+		return eventId;
+	}
+
+	public void setEventId(int eventId) {
+		this.eventId = eventId;
+	}
+
+	public int getGoodsDiscount() {
+		return goodsDiscount;
+	}
+
+	public void setGoodsDiscount(int goodsDiscount) {
+		this.goodsDiscount = goodsDiscount;
+	}
+
+	public String getGoodsMainCategory() {
+		return goodsMainCategory;
+	}
+
+	public void setGoodsMainCategory(String goodsMainCategory) {
+		this.goodsMainCategory = goodsMainCategory;
+	}
+
+	public String getGoodsSubCategory() {
+		return goodsSubCategory;
+	}
+
+	public void setGoodsSubCategory(String goodsSubCategory) {
+		this.goodsSubCategory = goodsSubCategory;
+	}
+
+	public String getGoodsState() {
+		return goodsState;
+	}
+
+	public void setGoodsState(String goodsState) {
+		this.goodsState = goodsState;
+	}
+
+	public String getGoodsInfo() {
+		return goodsInfo;
+	}
+
+	public void setGoodsInfo(String goodsInfo) {
+		this.goodsInfo = goodsInfo;
+	}
+
+	public String getGoodsReturnPolicy() {
+		return goodsReturnPolicy;
+	}
+
+	public void setGoodsReturnPolicy(String goodsReturnPolicy) {
+		this.goodsReturnPolicy = goodsReturnPolicy;
+	}
+
+	public String getGoodsCompanyInfo() {
+		return goodsCompanyInfo;
+	}
+
+	public void setGoodsCompanyInfo(String goodsCompanyInfo) {
+		this.goodsCompanyInfo = goodsCompanyInfo;
+	}
+
+	public Date getGoodsStart() {
+		return goodsStart;
+	}
+
+	public void setGoodsStart(Date goodsStart) {
+		this.goodsStart = goodsStart;
+	}
+
+	public Date getGoodsEnd() {
+		return goodsEnd;
+	}
+
+	public void setGoodsEnd(Date goodsEnd) {
+		this.goodsEnd = goodsEnd;
+	}
+
+	public int getGoodsCount() {
+		return goodsCount;
+	}
+
+	public void setGoodsCount(int goodsCount) {
+		this.goodsCount = goodsCount;
+	}
+
+	public int getAdminAllow() {
+		return adminAllow;
+	}
+
+	public void setAdminAllow(int adminAllow) {
+		this.adminAllow = adminAllow;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+}

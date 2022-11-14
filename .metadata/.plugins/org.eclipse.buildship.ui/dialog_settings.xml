@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.import">
+		<item key="project_location" value="C:\spring\kasoonmin\webProject"/>
+		<item key="gradle_distribution" value="GRADLE_DISTRIBUTION(WRAPPER)"/>
+		<item key="apply_working_sets" value="true"/>
+		<list key="working_sets">
+			<item value="Other Projects"/>
+		</list>
+	</section>
+</section>

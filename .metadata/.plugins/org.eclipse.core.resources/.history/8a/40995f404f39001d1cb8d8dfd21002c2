@@ -1,0 +1,381 @@
+package com.springboot.goods.vo;
+
+import java.sql.Date;
+
+import org.springframework.stereotype.Component;
+
+@Component("goodsVO")
+public class GoodsVO {
+	private int uid;
+	private int goodsId;
+	private String goodsName;
+	private int goodsPrice;
+	private int eventId;
+	private int goodsDiscount;
+	private String goodsMainCategory;
+	private String goodsSubCategory;
+	private String goodsState;
+	private String goodsInfo;
+	private String goodsReturnPolicy;
+	private String goodsCompanyInfo;
+	private Date goodsStart;
+	private Date goodsEnd;
+	private int goodsCount;
+	private int adminAllow;
+	private String companyName;
+	private String productPhoto;
+
+	private int numOfTourist;
+	private String TV;
+	private String wifi;
+	private String refrigerator;
+	private int checkIn;
+	private int checkOut;
+	private int bedType;
+	private int bedAmount;
+	private String airConditioner;
+	private String swimmingPool;
+	private String breakfast;
+	private String spar;
+	private String hairAppliance;
+	private String petsAllowed;
+	private String store;
+	private String disabledAccessibility;
+	private String parking;
+	private int lodgingType;
+
+	public GoodsVO() {
+
+	}
+
+	// 상품등록할때 사용
+	public GoodsVO(int uid, int goodsId, String goodsName, int goodsPrice, String goodsMainCategory,
+			String goodsSubCategory, String companyName, String goodsInfo, String goodsCompanyInfo,
+			String productPhoto) {
+		this.uid = uid;
+		this.goodsId = goodsId;
+		this.goodsName = goodsName;
+		this.goodsPrice = goodsPrice;
+		this.goodsMainCategory = goodsMainCategory;
+		this.goodsSubCategory = goodsSubCategory;
+		this.goodsInfo = goodsInfo;
+		this.companyName = companyName;
+		this.goodsCompanyInfo = goodsCompanyInfo;
+		this.productPhoto = productPhoto;
+	}
+
+	// 상품등록할때 사용
+	public lodgingdetailVO(int numOfTourist, String TV, String wifi, String refrigerator, int checkIn,
+				int checkOut, int bedType, int bedAmount, String airConditioner, String swimmingPool, String breakfast,
+				String spar, String hairAppliance, String petsAllowed, String store, String disabledAccessibility,
+				String parking, int lodgingType) {
+			
+			this.numOfTourist = numOfTourist;
+			this.TV = TV;
+			this.wifi = wifi;
+			this.refrigerator = refrigerator;
+			this.checkIn = checkIn;
+			this.checkOut = checkOut;
+			this.bedType = bedType;
+			this.bedAmount = bedAmount;
+			this.airConditioner = airConditioner;
+			this.swimmingPool = swimmingPool;
+			this.breakfast = breakfast;
+			this.spar = spar;
+			this.hairAppliance = hairAppliance;
+			this.petsAllowed = petsAllowed;
+			this.store = store;
+			this.disabledAccessibility = disabledAccessibility;
+			this.parking = parking;
+			this.lodgingType = lodgingType;
+
+		}
+
+	public int getNumOfTourist() {
+		return numOfTourist;
+	}
+
+	public void setNumOfTourist(int numOfTourist) {
+		this.numOfTourist = numOfTourist;
+	}
+
+	public String getTV() {
+		return TV;
+	}
+
+	public void setTV(String tV) {
+		TV = tV;
+	}
+
+	public String getWifi() {
+		return wifi;
+	}
+
+	public void setWifi(String wifi) {
+		this.wifi = wifi;
+	}
+
+	public String getRefrigerator() {
+		return refrigerator;
+	}
+
+	public void setRefrigerator(String refrigerator) {
+		this.refrigerator = refrigerator;
+	}
+
+	public int getCheckIn() {
+		return checkIn;
+	}
+
+	public void setCheckIn(int checkIn) {
+		this.checkIn = checkIn;
+	}
+
+	public int getCheckOut() {
+		return checkOut;
+	}
+
+	public void setCheckOut(int checkOut) {
+		this.checkOut = checkOut;
+	}
+
+	public int getBedType() {
+		return bedType;
+	}
+
+	public void setBedType(int bedType) {
+		this.bedType = bedType;
+	}
+
+	public int getBedAmount() {
+		return bedAmount;
+	}
+
+	public void setBedAmount(int bedAmount) {
+		this.bedAmount = bedAmount;
+	}
+
+	public String getAirConditioner() {
+		return airConditioner;
+	}
+
+	public void setAirConditioner(String airConditioner) {
+		this.airConditioner = airConditioner;
+	}
+
+	public String getSwimmingPool() {
+		return swimmingPool;
+	}
+
+	public void setSwimmingPool(String swimmingPool) {
+		this.swimmingPool = swimmingPool;
+	}
+
+	public String getBreakfast() {
+		return breakfast;
+	}
+
+	public void setBreakfast(String breakfast) {
+		this.breakfast = breakfast;
+	}
+
+	public String getSpar() {
+		return spar;
+	}
+
+	public void setSpar(String spar) {
+		this.spar = spar;
+	}
+
+	public String getHairAppliance() {
+		return hairAppliance;
+	}
+
+	public void setHairAppliance(String hairAppliance) {
+		this.hairAppliance = hairAppliance;
+	}
+
+	public String getPetsAllowed() {
+		return petsAllowed;
+	}
+
+	public void setPetsAllowed(String petsAllowed) {
+		this.petsAllowed = petsAllowed;
+	}
+
+	public String getStore() {
+		return store;
+	}
+
+	public void setStore(String store) {
+		this.store = store;
+	}
+
+	public String getDisabledAccessibility() {
+		return disabledAccessibility;
+	}
+
+	public void setDisabledAccessibility(String disabledAccessibility) {
+		this.disabledAccessibility = disabledAccessibility;
+	}
+
+	public String getParking() {
+		return parking;
+	}
+
+	public void setParking(String parking) {
+		this.parking = parking;
+	}
+
+	public int getLodgingType() {
+		return lodgingType;
+	}
+
+	public void setLodgingType(int lodgingType) {
+		this.lodgingType = lodgingType;
+	}
+
+	public int getGoodsId() {
+		return goodsId;
+	}
+
+	public String getProductPhoto() {
+		return productPhoto;
+	}
+
+	public void setProductPhoto(String productPhoto) {
+		this.productPhoto = productPhoto;
+	}
+
+	public void setGoodsId(int goodsId) {
+		this.goodsId = goodsId;
+	}
+
+	public int getUid() {
+		return uid;
+	}
+
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+
+	public String getGoodsName() {
+		return goodsName;
+	}
+
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
+	}
+
+	public int getGoodsPrice() {
+		return goodsPrice;
+	}
+
+	public void setGoodsPrice(int goodsPrice) {
+		this.goodsPrice = goodsPrice;
+	}
+
+	public int getEventId() {
+		return eventId;
+	}
+
+	public void setEventId(int eventId) {
+		this.eventId = eventId;
+	}
+
+	public int getGoodsDiscount() {
+		return goodsDiscount;
+	}
+
+	public void setGoodsDiscount(int goodsDiscount) {
+		this.goodsDiscount = goodsDiscount;
+	}
+
+	public String getGoodsMainCategory() {
+		return goodsMainCategory;
+	}
+
+	public void setGoodsMainCategory(String goodsMainCategory) {
+		this.goodsMainCategory = goodsMainCategory;
+	}
+
+	public String getGoodsSubCategory() {
+		return goodsSubCategory;
+	}
+
+	public void setGoodsSubCategory(String goodsSubCategory) {
+		this.goodsSubCategory = goodsSubCategory;
+	}
+
+	public String getGoodsState() {
+		return goodsState;
+	}
+
+	public void setGoodsState(String goodsState) {
+		this.goodsState = goodsState;
+	}
+
+	public String getGoodsInfo() {
+		return goodsInfo;
+	}
+
+	public void setGoodsInfo(String goodsInfo) {
+		this.goodsInfo = goodsInfo;
+	}
+
+	public String getGoodsReturnPolicy() {
+		return goodsReturnPolicy;
+	}
+
+	public void setGoodsReturnPolicy(String goodsReturnPolicy) {
+		this.goodsReturnPolicy = goodsReturnPolicy;
+	}
+
+	public String getGoodsCompanyInfo() {
+		return goodsCompanyInfo;
+	}
+
+	public void setGoodsCompanyInfo(String goodsCompanyInfo) {
+		this.goodsCompanyInfo = goodsCompanyInfo;
+	}
+
+	public Date getGoodsStart() {
+		return goodsStart;
+	}
+
+	public void setGoodsStart(Date goodsStart) {
+		this.goodsStart = goodsStart;
+	}
+
+	public Date getGoodsEnd() {
+		return goodsEnd;
+	}
+
+	public void setGoodsEnd(Date goodsEnd) {
+		this.goodsEnd = goodsEnd;
+	}
+
+	public int getGoodsCount() {
+		return goodsCount;
+	}
+
+	public void setGoodsCount(int goodsCount) {
+		this.goodsCount = goodsCount;
+	}
+
+	public int getAdminAllow() {
+		return adminAllow;
+	}
+
+	public void setAdminAllow(int adminAllow) {
+		this.adminAllow = adminAllow;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+}

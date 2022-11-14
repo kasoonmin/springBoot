@@ -1,0 +1,19 @@
+package com.springboot.goods.dao;
+
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Repository;
+
+import com.springboot.goods.vo.GoodsVO;
+import com.springboot.goods.vo.lodgingdetailVO;
+
+@Mapper
+@Repository("goodsDAO")
+public interface GoodsDAO {
+	public int insertGoods(Map goodsMap) throws DataAccessException;
+
+	public int insertlodgingdetail(lodgingdetailVO lodging) throws DataAccessException;
+
+}

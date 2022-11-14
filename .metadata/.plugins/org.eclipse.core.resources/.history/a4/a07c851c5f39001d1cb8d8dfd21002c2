@@ -1,0 +1,183 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<body>
+    
+    <h2>상품등록</h2>
+    <form id="form1" name="form1" enctype="multipart/form-data" method="post">  
+    <input type="hidden" name="uid" value="10">
+        <table>
+        <tr>
+        <td>
+        </td>
+        </tr>
+        <tr>
+        <td>상품번호</td>
+        <td><input type="text" name="goodsId" id="goodsId"></td>
+        </tr>
+            <tr>
+                <td>상품명</td>
+                <td><input type="text" name="goodsName" id="goodsName"></td>
+            </tr>
+            <tr>
+                <td>상품종류</td>
+                <td>
+                    <span><input type="radio" id="mainCategory" name="goodsMainCategory" value="1"><span></span>숙박</label></span></li>
+                    <span><input type="radio" id="mainCategory" name="goodsMainCategory" value="2"><span></span>투어 & 티켓</label></span></li>
+                </td>
+                </tr>
+            <tr>
+                <td>상품지역</td>
+                <td>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="1"><span></span>서울</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="2"><span></span>제주</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="3"><span></span>부산</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="4"><span></span>전주</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="5"><span></span>대전</label></span></li>
+                </td>
+            </tr>
+            <tr>
+                <td>가격</td>
+                <td><input type="text" name="goodsPrice" id="goodsPrice"></td>
+            </tr>
+            <tr>
+                <td>상품정보</td>
+                <td><textarea rows="5" cols="60" name="goodsInfo" id="goodsInfo"></textarea></td>
+            </tr>
+            <tr>
+                <td>회사명</td>
+                <td><input type="text" name="companyName" id="companyName"></td>
+            </tr>
+            <tr>
+                <td>회사정보</td>
+                <td><textarea rows="5" cols="60" name="goodsCompanyInfo" id="goodsCompanyInfo"></textarea></td>
+            </tr>
+            <tr>
+                <td>상품이미지</td>
+                <td><input type="file" name="goodsPhoto" id="goodsPhoto"></td>
+            </tr>
+            <tr>
+            <td>상품상세정보</td>
+            </tr>
+            <tr>
+            <td>숙소유형</td>
+                <td>
+                    <span><input type="checkbox" id="lodgingType" name="lodgingType" value="1"><span></span>호텔</label></span></li>
+                    <span><input type="checkbox" id="lodgingType" name="lodgingType" value="2"><span></span>펜션</label></span></li>
+                    <span><input type="checkbox" id="lodgingType" name="lodgingType" value="3"><span></span>게스트하우스</label></span></li>                 
+                </td>
+            </tr>
+            <tr>
+            <td>인원</td>
+            <td>           
+                <span><input type="checkbox" id="numOfTourist" name="numOfTourist" value=""><span></span>인원</label></span></li>        
+            </td>
+            <tr>
+            <td>침대 갯수</td>
+            <td>
+                <span><input type="checkbox" id="bedAmount" name="bedAmount" value=""><span></span>침대 갯수</label></span></li>             
+            </td>
+            </tr>
+            </tr>
+            <tr>
+            <td>체크인</td>
+            <td>
+                <span><input type="checkbox" id="checkIn" name="checkIn" value=""><span></span>체크인</label></span></li>        
+            </td>
+            </tr>
+            <tr>
+            <td>체크아웃</td>
+            <td>
+                <span><input type="checkbox" id="checkOut" name="checkOut" value=""><span></span>체크아웃</label></span></li>        
+            </td>
+            </tr>
+            <tr>
+            <td>배드 타입</td>
+            <td>
+                <span><input type="checkbox" id="bedType" name="1" value="싱글"><span></span>싱글</label></span></li>
+                <span><input type="checkbox" id="bedType" name="2" value="더블"><span></span>더블</label></span></li>
+                <span><input type="checkbox" id="bedType" name="3" value="트윈"><span></span>트윈</label></span></li>
+                <span><input type="checkbox" id="bedType" name="4" value="온돌"><span></span>온돌</label></span></li>  
+            </td>
+            </tr>
+            <tr>
+            <td>공용 시설</td>
+            <td>
+                <span><input type="checkbox" id="swimmingPool" name="swimmingPool" value="수영장"><span></span>수영장</label></span></li>
+                <span><input type="checkbox" id="restaurant" name="restaurant" value="레드토랑"><span></span>레드토랑</label></span></li>
+                <span><input type="checkbox" id="parking" name="parking" value="주차장"><span></span>주차장</label></span></li>
+                <span><input type="checkbox" id="hotSpring" name="hotSpring" value="온천"><span></span>온천</label></span></li>  
+            </td>
+            </tr>
+            <tr>
+            <td>객실 내 시설</td>
+            <td>
+                <span><input type="checkbox" id="spar" name="spar" value="객실스파"><span></span>객실스파</label></span></li>
+                <span><input type="checkbox" id="wifi" name="wifi" value="와이파이"><span></span>와이파이</label></span></li>
+                <span><input type="checkbox" id="TV" name="TV" value="TV"><span></span>TV</label></span></li>
+                <span><input type="checkbox" id="airConditioner" name="airConditioner" value="에어컨"><span></span>에어컨</label></span></li>
+                <span><input type="checkbox" id="refrigerator" name="refrigerator" value="냉장고"><span></span>냉장고</label></span></li>
+                <span><input type="checkbox" id="hairAppliance" name="hairAppliance" value="드라이기"><span></span>드라이기</label></span></li>
+            </td>
+            </tr>
+            <tr>
+            <td>기타</td>
+            <td>
+                <span><input type="checkbox" id="petsAllowed" name="petsAllowed" value="반려견동반"><span></span>반려견동반</label></span></li>
+                <span><input type="checkbox" id="breakfast" name="breakfast" value="조식포함"><span></span>조식포함</label></span></li>
+                <span><input type="checkbox" id="store" name="store" value="편의점"><span></span>편의점</label></span></li>
+                <span><input type="checkbox" id="disabledAccessibility" name="disabledAccessibility" value="장애인편의시설"><span></span>장애인편의시설</label></span></li>
+            </td>
+            </tr>
+           
+          
+        </table>
+        <input type="button" value="등록" id="addBtn">
+        <input type="button" value="목록" id="listBtn">
+    </form>
+    <script>
+        $(document).ready(function(){
+        //상품 등록 유효성 검사
+        $("#addBtn").click(function(){
+            var goodsName = $("#goodsName").val();
+            var goodsPrice = $("#goodsPrice").val();
+            var productDesc = $("#productDesc").val();
+            var productPhoto = $("#productPhoto").val();
+
+            if(goodsName == ""){
+                alert("상품명을 입력해주세요");
+                goodsName.foucs();
+            }else if(goodsPrice == ""){
+                alert("상품 가격을 입력해주세요");
+                goodsPrice.foucs();
+            }
+          
+           
+
+            //상품 정보 전송
+            document.form1.action = "${contextPath}/goods/goodsWrite1.do";
+            document.form1.submit();
+        });
+        //상품 목록 이동
+        $("#listBtn").click(function(){
+            location.href='${contextPath}/goodsinsert.do';
+        });
+    });
+    
+    </script>
+
+</body>
+</html>

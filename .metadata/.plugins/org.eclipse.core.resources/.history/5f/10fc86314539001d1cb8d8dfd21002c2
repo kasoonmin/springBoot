@@ -1,0 +1,12 @@
+package com.springboot.goods.service;
+
+import com.springboot.goods.vo.GoodsVO;
+
+public interface GoodsService {
+	public int goodsWrite(GoodsVO goods);
+	public int lodgingdetail(lodingdetailVO loding)
+//
+//	public void updateGoods(GoodsVO vo);
+//
+//	public void deleteGoods(int goodId);
+}

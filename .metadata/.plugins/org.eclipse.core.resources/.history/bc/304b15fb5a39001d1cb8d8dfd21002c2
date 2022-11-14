@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.goods.dao.GoodsDAO">
+	<resultMap id="goodsResult" type="goodsVO">
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="goodsMainCategory" column="goodsMainCategory" />
+		<result property="goodsSubCategory" column="goodsSubCategory" />
+		<result property="goodsInfo" column="goodsInfo" />
+		<result property="companyName" column="companyName" />
+	    <result property="productPhoto" column="productPhoto" />
+		<result property="goodsCompanyInfo" column="goodsCompanyInfo" />
+	</resultMap>
+	
+	<resultMap id="lodgingResult" type="lodgingdetailVO">
+		<result property="goodsId" column="goodsId" />
+		<result property="numOfTourist" column="numOfTourist" />
+		<result property="TV" column="TV" />
+		<result property="wifi" column="wifi" />
+		<result property="refrigerator" column="refrigerator" />
+		<result property="checkIn" column="checkIn" />
+		<result property="checkOut" column="checkOut" />
+		<result property="bedType" column="bedType" />
+	    <result property="bedAmount" column="bedAmount" />
+		<result property="airConditioner" column="airConditioner" />
+		<result property="swimmingPool" column="swimmingPool" />
+		<result property="breakfast" column="breakfast" />
+		<result property="spar" column="spar" />
+		<result property="hairAppliance" column="hairAppliance" />
+		<result property="petsAllowed" column="petsAllowed" />
+		<result property="store" column="store" />
+	    <result property="disabledAccessibility" column="disabledAccessibility" />
+		<result property="parking" column="parking" />
+		<result property="lodgingType" column="lodgingType" />
+	</resultMap>
+	
+	
+	<insert id="insertGoods" parameterType="goodsVO">
+		<![CDATA[
+			insert into goods(uid, goodsName, goodsPrice, goodsMainCategory, goodsSubCategory, goodsInfo, companyName, goodsCompanyInfo, productPhoto)
+			values(#{uid}, #{goodsName}, #{goodsPrice}, #{goodsMainCategory}, #{goodsSubCategory}, #{goodsInfo}, #{companyName}, #{goodsCompanyInfo}, #{productPhoto})
+		]]>
+	</insert>
+	
+	<insert id="insertlodgingdetail" parameterType="lodgingdetailVO">
+		<![CDATA[
+			insert into lodgingdetail(goodsId, lodgingType, bedType, swimmingPool, parking, spar, wifi, TV, airConditioner, refrigerator)
+			values(#{goodsId}, #{lodgingType}, #{bedType}, #{swimmingPool}, #{parking}, #{spar}, #{wifi}, #{TV}, #{airConditioner}, #{refrigerator})
+		]]>
+	</insert>
+
+	
+</mapper>

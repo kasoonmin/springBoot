@@ -1,0 +1,211 @@
+package com.springboot.goods.vo;
+
+import java.sql.Date;
+
+import org.springframework.stereotype.Component;
+
+@Component("goodsVO")
+public class GoodsVO {
+	private int uid;
+	private int goodsId;
+	private String goodsName;
+	private int goodsPrice;
+	private int eventId;
+	private int goodsDiscount;
+	private String goodsMainCategory;
+	private String goodsSubCategory;
+	private String goodsState;
+	private String goodsInfo;
+	private String goodsReturnPolicy;
+	private String goodsCompanyInfo;
+	private Date goodsStart;
+	private Date goodsEnd;
+	private int goodsCount;
+	private int adminAllow;
+	private String companyName;
+	private String productPhoto;
+	
+	private int goodsId;
+	private int numOfTourist;
+	private String TV;
+	private String wifi;
+	private String refrigerator;
+	private int checkIn;
+	private int checkOut;
+	private int bedType;
+	private int bedAmount;
+	private String airConditioner;
+	private String swimmingPool;
+	private String breakfast;
+	private String spar;
+	private String hairAppliance;
+	private String petsAllowed;
+	private String store;
+	private String disabledAccessibility;
+	private String parking;
+	private int lodgingType;
+
+	public GoodsVO() {
+
+	}
+
+	// 상품등록할때 사용
+	public GoodsVO(int uid, int goodsId, String goodsName, int goodsPrice, String goodsMainCategory,
+			String goodsSubCategory, String companyName, String goodsInfo, String goodsCompanyInfo,
+			String productPhoto) {
+		this.uid = uid;
+		this.goodsId = goodsId;
+		this.goodsName = goodsName;
+		this.goodsPrice = goodsPrice;
+		this.goodsMainCategory = goodsMainCategory;
+		this.goodsSubCategory = goodsSubCategory;
+		this.goodsInfo = goodsInfo;
+		this.companyName = companyName;
+		this.goodsCompanyInfo = goodsCompanyInfo;
+		this.productPhoto = productPhoto;
+	}
+
+	public int getGoodsId() {
+		return goodsId;
+	}
+
+	public String getProductPhoto() {
+		return productPhoto;
+	}
+
+	public void setProductPhoto(String productPhoto) {
+		this.productPhoto = productPhoto;
+	}
+
+	public void setGoodsId(int goodsId) {
+		this.goodsId = goodsId;
+	}
+
+	public int getUid() {
+		return uid;
+	}
+
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+
+	public String getGoodsName() {
+		return goodsName;
+	}
+
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
+	}
+
+	public int getGoodsPrice() {
+		return goodsPrice;
+	}
+
+	public void setGoodsPrice(int goodsPrice) {
+		this.goodsPrice = goodsPrice;
+	}
+
+	public int getEventId() {
+		return eventId;
+	}
+
+	public void setEventId(int eventId) {
+		this.eventId = eventId;
+	}
+
+	public int getGoodsDiscount() {
+		return goodsDiscount;
+	}
+
+	public void setGoodsDiscount(int goodsDiscount) {
+		this.goodsDiscount = goodsDiscount;
+	}
+
+	public String getGoodsMainCategory() {
+		return goodsMainCategory;
+	}
+
+	public void setGoodsMainCategory(String goodsMainCategory) {
+		this.goodsMainCategory = goodsMainCategory;
+	}
+
+	public String getGoodsSubCategory() {
+		return goodsSubCategory;
+	}
+
+	public void setGoodsSubCategory(String goodsSubCategory) {
+		this.goodsSubCategory = goodsSubCategory;
+	}
+
+	public String getGoodsState() {
+		return goodsState;
+	}
+
+	public void setGoodsState(String goodsState) {
+		this.goodsState = goodsState;
+	}
+
+	public String getGoodsInfo() {
+		return goodsInfo;
+	}
+
+	public void setGoodsInfo(String goodsInfo) {
+		this.goodsInfo = goodsInfo;
+	}
+
+	public String getGoodsReturnPolicy() {
+		return goodsReturnPolicy;
+	}
+
+	public void setGoodsReturnPolicy(String goodsReturnPolicy) {
+		this.goodsReturnPolicy = goodsReturnPolicy;
+	}
+
+	public String getGoodsCompanyInfo() {
+		return goodsCompanyInfo;
+	}
+
+	public void setGoodsCompanyInfo(String goodsCompanyInfo) {
+		this.goodsCompanyInfo = goodsCompanyInfo;
+	}
+
+	public Date getGoodsStart() {
+		return goodsStart;
+	}
+
+	public void setGoodsStart(Date goodsStart) {
+		this.goodsStart = goodsStart;
+	}
+
+	public Date getGoodsEnd() {
+		return goodsEnd;
+	}
+
+	public void setGoodsEnd(Date goodsEnd) {
+		this.goodsEnd = goodsEnd;
+	}
+
+	public int getGoodsCount() {
+		return goodsCount;
+	}
+
+	public void setGoodsCount(int goodsCount) {
+		this.goodsCount = goodsCount;
+	}
+
+	public int getAdminAllow() {
+		return adminAllow;
+	}
+
+	public void setAdminAllow(int adminAllow) {
+		this.adminAllow = adminAllow;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+}

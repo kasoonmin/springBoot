@@ -1,0 +1,204 @@
+@charset "UTF-8";
+.backgroundImg {
+	width:100%;
+    height: 300px;
+    position: relative;
+    background-color: #E6E6FA;
+    z-index : 0;
+    top:7.5px;
+   
+    padding:0px;
+}
+
+.searchBox {
+    height: 270px;
+    width: 1200px;
+    position: relative;
+    top : -120px;
+    padding : 10px;
+    border : 1px solid black;
+    margin : auto;
+    z-index : 1;
+    background-color: white;
+}
+
+.iconBar {
+    width: 1180px;
+    padding : 10px 0px;
+    border-bottom: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.iconBar ul {
+    list-style: none;
+    display: flex;
+    padding: 0px;
+    margin:auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.iconBar li{
+    margin: 0px 50px;
+    padding: 0px;
+}
+
+.iconBar p {
+    width : 80px;
+}
+
+.iconBar a, a:active, a:focus {
+    color : black;
+    text-decoration: none;
+}
+
+
+
+.iconBar img {
+    width: 100%;
+    height: 100%;
+} 
+
+
+.iconHotel:hover {
+   content: url('../img/hotelColor.png')
+}
+
+.iconTourism:hover {
+    content: url('../img/tourismColor.png')
+}
+
+.iconAirpalne:hover{
+   content: url('../img/airplaneColor.png')
+}
+
+.iconFestival:hover {
+   content: url('../img/festivalColor.png')
+}
+
+.iconCommunity:hover {
+   content: url('../img/communityColor.png')
+}
+
+.iconEvent:hover {
+   content: url('../img/eventColor.png')
+}
+
+#search {
+    display: flex;
+    padding : 12px 25px;
+    height: 100px;
+}
+
+#search div {
+    display : inline-block;
+    margin-right : 10px;
+}
+
+#search p {
+    margin-bottom: 10px;
+}
+
+#search input {
+    height : 50px;
+    width : 100%;
+    border: 0px;
+}
+
+.destination {
+    width : 400px;
+}
+
+.day {
+    width : 250px;
+}
+
+.peopleNum {
+    width : 250px;
+}
+
+.searchFormButton {
+  width : 190px;
+}
+
+.area_cs_info{
+    border-top: 1px solid gray;
+    height: 300px;
+   
+}
+
+
+.cs_info{
+    width: 600px;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 50px;
+   
+    
+      
+}
+.cs_info ul{
+    list-style: none;   
+}
+
+.area_cs_number{
+    width: 200px;
+    font-size: 30px;
+    float: left;
+
+}
+
+.area_cs_time{
+    width: 250px;
+    height: 100px;
+    font-size: 20px;
+    float: left;
+    padding: 30px;
+    margin-left: 100px;
+    border-left: 1px solid gray ;
+    position: relative;
+    top: 25px;
+}
+
+.mypage_info{
+    width: 600px;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    text-align: center;
+    
+    
+}
+.mypage_info ul{
+    list-style: none;   
+   width: 600px;
+   
+}
+
+.mypage_info ul li{
+    display: inline-block;
+    font-size: 18   px;
+}
+.mypage_info_btn{
+    position: relative;
+    bottom: 35px;
+    width: 150px;
+    padding: 15px;
+    margin-bottom: 5px;
+    border: none;
+    background-color: #007ac9;
+    color: #fff;
+
+}
+.hot_product{
+    text-align: center;
+}
+
+.product_container{
+    position: relative;
+    top:-20px;
+}

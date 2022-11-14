@@ -1,0 +1,22 @@
+package com.springboot.goods.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.ModelAndView;
+
+import com.springboot.goods.vo.GoodsVO;
+import com.springboot.goods.vo.lodgingdetailVO;
+
+public interface GoodsController {
+	public ModelAndView goodsWrite(HttpServletRequest request, HttpServletResponse response) throws Exception;
+
+//	public ModelAndView goodsWrite(GoodsVO member, HttpServletRequest request, HttpServletResponse response)
+//			throws Exception;
+
+//	public ModelAndView goodsWrite(GoodsVO goods, MultipartHttpServletRequest multipartRrequest,
+//			HttpServletResponse response) throws Exception;
+
+	public ModelAndView goodsWrite(GoodsVO goods, GoodsVO lodging, HttpServletRequest request,
+			HttpServletResponse response) throws Exception;
+}

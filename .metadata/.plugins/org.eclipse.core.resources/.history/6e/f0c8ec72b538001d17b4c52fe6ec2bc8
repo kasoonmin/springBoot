@@ -1,0 +1,241 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+//        //상품 등록 유효성 검사
+//    	function addBtn(frm) {
+//            var goodsName = $("#goodsName").val();
+//            var goodsPrice = $("#goodsPrice").val();
+//           
+//
+//            if(goodsName == ""){
+//                alert("상품명을 입력해주세요");
+//                goodsName.foucs();
+//            }else if(goodsPrice == ""){
+//                alert("상품 가격을 입력해주세요");
+//                goodsPrice.foucs();
+//            }
+//
+//            //상품 정보 전송
+//            document.form1.action = "${contextPath}/goods/goodsWrite.do";
+//            document.form1.submit();
+//        }
+//    	
+//        //상품 목록 이동
+//        $("#listBtn").click(function(){
+//            location.href="${contextPath}/goods/goodsWrite.do";
+//        });
+//    function join(frmObj) {
+//    	
+//        }
+//    	frmObj.action="${contextPath}/goods/goodsWrite.do";
+//        frmObj.submit();
+//        }
+    function join(frmObj) {
+    	var flag = false; // @ 안시킨 아이디
+    	var id = $("#userId").val();
+    	
+        if(!_IS_ID_CHECK_TF){ //아이디 중복 확인을 해주세요
+            document.getElementById("idChk3").style.display="block";
+
+            return false;
+        }
+
+        if($("#email_type").val() === 'NONE') { //이메일 형식이 틀렸습니다.
+        	 var format3 = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+            if(!format3.test(id)) {
+                document.getElementById("idChk2").style.display="block";
+
+                return false;
+            }
+        } else {
+            /* 이메일 아이디 생성 */
+            var emailId = $("#userId").val();
+            
+            if ($("#email_type").val() !== "NONE") {
+                emailId += "@"+$("#email_type").val();
+                $("#userId").val(emailId);
+                flag = true; // 실패할 때 userId 초기화 시키기 위한 flag
+            }
+        }
+
+        if($("#userPwd1").val() == ''){  //비밀번호를 입력해주세요
+            document.getElementById("pwdChk3").style.display="block";
+            
+            if(flag) {
+            	$("#userId").val(id);
+            }
+            return false;
+        }
+
+        if($("#userPwd2").val() == ''){ //비밀번호 확인을 입력해주세요.
+            document.getElementById("pwdChk4").style.display="block";
+
+            if(flag) {
+            	$("#userId").val(id);
+            }
+            return false;
+        }
+
+        //비밀번호 체크
+        if($("#userPwd2").val() != $("#userPwd1").val()){ //비밀번호와 비밀번호 확인이 불일치합니다.
+            document.getElementById("pwdChk2").style.display="block";
+
+            if(flag) {
+            	$("#userId").val(id);
+            }
+            return false;
+        }
+
+        //비밀번호 체크
+        if($("#custPassChk").val() != "Y"){ 
+            document.getElementById("pwdChk1").style.display="block";
+
+            if(flag) {
+            	$("#userId").val(id);
+            }
+            return false;
+        }
+
+         // 이름 유효성 체크
+        var userName = $('#userName').val();
+        var nameFormat = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;
+        if(nameFormat.test(userName)){
+            $("#userName").val(userName.replace(nameFormat, ''));
+            document.getElementById("nameChk2").style.display="block";
+            
+            if(flag) {
+            	$("#userId").val(id);
+            }
+            return false;
+        } else if ($("#userName").val().length <= 1){
+            document.getElementById("nameChk1").style.display="block";
+            
+            if(flag) {
+            	$("#userId").val(id);
+            }
+            return false;
+        }
+     
+     // 휴대폰 번호 체크	         
+         if(!$("#userPhoneNumber").val().match(/^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/)){
+        	 document.getElementById("phoneChk1").style.display="block";
+	            
+	            if(flag) {
+	            	$("#userId").val(id);
+	            }
+	            return false;
+         }
+        
+         // 생년월일 체크
+         if($('#userBirth').val() == ''){
+            document.getElementById("birthChk1").style.display="block";
+            
+            if(flag) {
+            	$("#userId").val(id);
+            }
+            return false;
+        }
+
+         var birth = $('#userBirth').val();
+        if(birth.length !== 8 || birth.substr(0,4) > (new Date()).getFullYear() || birth.substr(4,2) > 12 || birth.substr(6,2) > 31 ){
+            document.getElementById("birthChk2").style.display="block";
+
+            if(flag) {
+            	$("#userId").val(id);
+            }
+            return flase;
+        }
+        
+        if($('input[name="userGender"]:checked').length === 0){
+            document.getElementById("genderChk1").style.display="block";
+
+            if(flag) {
+            	$("#userId").val(id);
+            }
+            return false;
+        }
+    	frmObj.action="${contextPath}/member/addMember.do";
+        frmObj.submit();
+    }
+
+    </script>
+    
+
+</head>
+<body>
+    
+    <h2>상품등록</h2>
+    <form id="form1" name="form1" action="${contextPath}/goods/goodsWrite.do" enctype="multipart/form-data" method="post">    
+        <table>
+            <tr>
+                <td>상품명</td>
+                <td><input type="text" name="goodsName" id="goodsName"></td>
+            </tr>
+            <tr>
+                <td>상품종류</td>
+                <td>
+                    <span><input type="radio" id="mainCategory" name="goodsMainCategory" value="1"><span></span>숙박</label></span></li>
+                    <span><input type="radio" id="mainCategory" name="goodsMainCategory" value="2"><span></span>투어 & 티켓</label></span></li>
+                </td>
+                </tr>
+            <tr>
+                <td>상품지역</td>
+                <td>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="1"><span></span>서울</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="2"><span></span>제주</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="3"><span></span>부산</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="4"><span></span>전주</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="5"><span></span>대전</label></span></li>
+                </td>
+            </tr>
+            <tr>
+                <td>가격</td>
+                <td><input type="text" name="goodsPrice" id="goodsPrice"></td>
+            </tr>
+            <tr>
+                <td>상품정보</td>
+                <td><textarea rows="5" cols="60" name="goodsInfo" id="goodsInfo"></textarea></td>
+            </tr>
+            <tr>
+                <td>회사명</td>
+                <td><input type="text" name="companyName" id="companyName"></td>
+            </tr>
+            <tr>
+                <td>회사정보</td>
+                <td><textarea rows="5" cols="60" name="goodsCompanyInfo" id="goodsCompanyInfo"></textarea></td>
+            </tr>
+            <tr>
+                <td>상품이미지</td>
+                <td><input type="file" name="productPhoto" id="productPhoto"></td>
+            </tr>
+            <td>상품상세정보</td>
+                <td>
+                    <span><input type="checkbox" id="subCategory" name="goodsSubCategory" value="호텔"><span></span>호텔</label></span></li>
+                    <span><input type="checkbox" id="subCategory" name="goodsSubCategory" value="펜션"><span></span>펜션</label></span></li>
+                    <span><input type="checkbox" id="subCategory" name="goodsSubCategory" value="게스트하우스"><span></span>게스트하우스</label></span></li>
+                    <span><input type="checkbox" id="subCategory" name="TV" value="TV"><span></span>TV</label></span></li>
+                    <span><input type="checkbox" id="wifi" name="wifi" value="wifi"><span></span>wifi</label></span></li>
+                </td>
+          
+        </table>
+        <input type="submit" onclick="addBtn(this.form)"  value="등록하기" /> 
+        <input type="button" onclick="addBtn(this.form)" id="addBtn">
+        <input type="button" value="목록" id="listBtn">
+    </form>
+    
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
+	</definition>
+	
+	<definition name="/page/mainPage" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/page/mainPage.jsp"/>
+	</definition>
+	
+	<definition name="/page/goodsPage" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/page/goodsPage.jsp"/>
+	</definition>
+	
+	<definition name="/page/goodsPage2" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/page/goodsPage2.jsp"/>
+	</definition>
+	
+	<definition name="/page/goodsDetailPage" extends="baseLayout">
+		<put-attribute name="title" value="회원 정보 수정창:김수빈" />
+		<put-attribute name="body" value="/WEB-INF/views/page/goodsDetailPage.jsp"/>
+	</definition>
+	
+	<definition name="/page/paymentPage" extends="baseLayout">
+		<put-attribute name="title" value="회원 정보 수정창:김수빈" />
+		<put-attribute name="body" value="/WEB-INF/views/page/paymentPage.jsp"/>
+	</definition>
+	
+		<definition name="/page/guidelineAirplain" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/guidelineAirplain.jsp"/>
+	</definition>
+	
+		<definition name="/page/goodsFilterPage" extends="baseLayout">
+		<put-attribute name="title" value="회원 정보 수정창:김수빈" />
+		<put-attribute name="body" value="/WEB-INF/views/page/goodsFilterPage.jsp"/>
+	</definition>
+
+<definition name="/mypage/mypage" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/mypage.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/boardManage" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/boardManage.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/pointCoupon" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/pointCoupon.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/qnaboard" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/qnaboard.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/viewqna" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/viewqna.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/qna" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/qna.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/faqList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/faqList.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/faqWriteForm" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/faqWriteForm.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/notice" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/notice.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/noticeForm" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/noticeForm.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/noticeView" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/noticeView.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/guidelineAirplain" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/guidelineAirplain.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/guidlinePay" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/guidlinePay.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/guidelinePointcoupone" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/guidelinePointcoupone.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/guidelineReservation" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/guidelineReservation.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/wishList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/wishList.jsp"/>
+	</definition>
+	
+	<definition name="/page/community" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/page/community.jsp"/>
+	</definition>
+	
+	<definition name="/board/summernote" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/board/summernote.jsp"/>
+	</definition>
+	
+	<definition name="/board/viewBoard" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/board/viewBoard.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/listCart" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/listCart.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/order" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/order.jsp"/>
+	</definition>
+	
+	<definition name="/page/orderResult" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/page/orderResult.jsp"/>
+	</definition>
+	
+	<definition name="/order/bOrderCheck" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/order/bOrderCheck.jsp"/>
+	</definition>
+	
+	<definition name="/mypage/businessPage" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/businessPage.jsp"/>
+	</definition>
+	
+	<definition name="/goods/goodsList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/goods/goodsList.jsp"/>
+	</definition>
+	
+	<definition name="/goods/goodsModify" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/goods/goodsModify.jsp"/>
+	</definition>
+	
+	<definition name="/goods/goodsWrite1" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/goods/goodsWrite1.jsp"/>
+	</definition>
+	
+	<definition name="/goods/goodsWrite2" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/goods/goodsWrite2.jsp"/>
+	</definition>
+	
+	<definition name="/goods/goodsWritePage" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/goods/goodsWritePage.jsp"/>
+	</definition>
+	
+	
+</tiles-definitions>

@@ -1,0 +1,46 @@
+1663637151030	Copy compilation unit
+1663637152481	Copy compilation unit
+1663637156488	Delete element
+1663637158223	Delete element
+1663637171745	Copy package
+1663637196342	Copy package
+1663637211211	Copy package
+1663637221776	Copy package
+1663637321201	Rename type 'ArticleVO'
+1663637390214	Rename type 'BoardServiceImpl'
+1663637470944	Rename type 'BoardService'
+1663637485269	Rename type 'BoardDAO'
+1663637498273	Rename type 'BoardControllerImpl'
+1663637515075	Rename type 'BoardController'
+1663639413777	Rename resource 'goos'
+1663639443030	Rename resource 'goodsWrite'
+1663643515373	Delete element
+1663644760779	Rename type 'goodsVO'
+1663644767883	Rename type 'goodsServiceImpl'
+1663644773637	Rename type 'goodsService'
+1663644779813	Rename type 'goodsDAO'
+1663644787539	Rename type 'goodsControllerImpl'
+1663644795150	Rename type 'goodsController'
+1663655094330	Move file
+1663655127117	Delete element
+1663661266108	Delete element
+1663661275228	Delete element
+1663720382269	Rename type 'lodgingdetail'
+1663817478005	Copy compilation unit
+1663817537976	Delete element
+1663817687408	Rename type 'orderVO'
+1663817710134	Rename type 'touristVO'
+1663817774063	Rename type 'OrderService'
+1663818147657	Delete element
+1663822472712	Delete element
+1663822492077	Delete element
+1663822546076	Delete element
+1663826646786	Copy file
+1663826671427	Delete element
+1663831911260	Rename resource 'tiles_member.xml'
+1663831919150	Rename resource 'tiles_page.xml'
+1663905116081	Move compilation unit
+1663905121448	Move compilation unit
+1663905483720	Delete element
+1663905491837	Delete element
+1663905507531	Delete element

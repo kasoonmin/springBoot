@@ -1,0 +1,28 @@
+package com.springboot.member.service;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.dao.DataAccessException;
+
+import com.springboot.member.vo.KakaoVO;
+import com.springboot.member.vo.MemberVO;
+import com.springboot.member.vo.NaverVO;
+
+public interface MemberService {
+//	public List listMembers() throws DataAccessException;
+	public int addMember(MemberVO member) throws DataAccessException;
+//	public int removeMember(String id) throws DataAccessException;
+	public void memberModify(MemberVO memberVO) throws Exception;
+//	public MemberVO modMemberInfo(String id) throws DataAccessException;
+	public MemberVO login(MemberVO memberVO) throws Exception;
+	public String userIdOverlapCheckService(String userId) throws Exception;
+	public String getAccessToken(String authorize_code) throws DataAccessException;
+	public KakaoVO getUserInfo(String access_Token)throws DataAccessException;
+	public String naverSave(NaverVO naver)throws DataAccessException;
+	public void phoneCheck(String userPhoneNumber, int randomNumber) throws Exception;
+	public MemberVO getMemberInfo(String uid);
+	public MemberVO findId(MemberVO member) throws Exception; 
+	public void phone_pwd(MemberVO member, String div) throws Exception;
+	public void findPw(HttpServletResponse response, MemberVO vo) throws Exception;
+	public int findPwCheck(MemberVO memberVO)throws Exception;
+}

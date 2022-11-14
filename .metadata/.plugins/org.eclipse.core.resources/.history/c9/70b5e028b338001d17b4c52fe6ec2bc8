@@ -1,0 +1,112 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        상품 등록 유효성 검사
+        $("#addBtn").click(function(){
+            var goodsName = $("#goodsName").val();
+            var goodsPrice = $("#goodsPrice").val();
+           
+
+            if(goodsName == ""){
+                alert("상품명을 입력해주세요");
+                goodsName.foucs();
+            }else if(goodsPrice == ""){
+                alert("상품 가격을 입력해주세요");
+                goodsPrice.foucs();
+            }
+
+            //상품 정보 전송
+            document.form1.action = "${contextPath}/goods/goodsWrite.do";
+            document.form1.submit();
+        });
+        //상품 목록 이동
+        $("#listBtn").click(function(){
+            location.href="${contextPath}/goods/goodsWrite.do";
+        });
+    function join(frmObj) {
+    	
+        }
+    	frmObj.action="${contextPath}/goods/goodsWrite.do";
+        frmObj.submit();
+
+    </script>
+    
+
+</head>
+<body>
+    
+    <h2>상품등록</h2>
+    <form id="form1" name="form1" action="${contextPath}/goods/goodsWrite.do" enctype="multipart/form-data" method="post">    
+        <table>
+            <tr>
+                <td>상품명</td>
+                <td><input type="text" name="goodsName" id="goodsName"></td>
+            </tr>
+            <tr>
+                <td>상품종류</td>
+                <td>
+                    <span><input type="radio" id="mainCategory" name="goodsMainCategory" value="1"><span></span>숙박</label></span></li>
+                    <span><input type="radio" id="mainCategory" name="goodsMainCategory" value="2"><span></span>투어 & 티켓</label></span></li>
+                </td>
+                </tr>
+            <tr>
+                <td>상품지역</td>
+                <td>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="1"><span></span>서울</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="2"><span></span>제주</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="3"><span></span>부산</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="4"><span></span>전주</label></span></li>
+                    <span><input type="radio" id="subCategory" name="goodsSubCategory" value="5"><span></span>대전</label></span></li>
+                </td>
+            </tr>
+            <tr>
+                <td>가격</td>
+                <td><input type="text" name="goodsPrice" id="goodsPrice"></td>
+            </tr>
+            <tr>
+                <td>상품정보</td>
+                <td><textarea rows="5" cols="60" name="goodsInfo" id="goodsInfo"></textarea></td>
+            </tr>
+            <tr>
+                <td>회사명</td>
+                <td><input type="text" name="companyName" id="companyName"></td>
+            </tr>
+            <tr>
+                <td>회사정보</td>
+                <td><textarea rows="5" cols="60" name="goodsCompanyInfo" id="goodsCompanyInfo"></textarea></td>
+            </tr>
+            <tr>
+                <td>상품이미지</td>
+                <td><input type="file" name="productPhoto" id="productPhoto"></td>
+            </tr>
+            <td>상품상세정보</td>
+                <td>
+                    <span><input type="checkbox" id="subCategory" name="goodsSubCategory" value="호텔"><span></span>호텔</label></span></li>
+                    <span><input type="checkbox" id="subCategory" name="goodsSubCategory" value="펜션"><span></span>펜션</label></span></li>
+                    <span><input type="checkbox" id="subCategory" name="goodsSubCategory" value="게스트하우스"><span></span>게스트하우스</label></span></li>
+                    <span><input type="checkbox" id="subCategory" name="TV" value="TV"><span></span>TV</label></span></li>
+                    <span><input type="checkbox" id="wifi" name="wifi" value="wifi"><span></span>wifi</label></span></li>
+                </td>
+          
+        </table>
+        <input type="submit" onclick="addBtn(this.form)"  value="등록하기" /> 
+        <input type="button" onclick="addBtn" id="addBtn">
+        <input type="button" value="목록" id="listBtn">
+    </form>
+    
+
+</body>
+</html>

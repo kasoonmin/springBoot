@@ -1,0 +1,190 @@
+.contents_area{
+    width: 100%;
+    display: flex;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+.soon{
+    width:500px;   
+    margin: auto;
+ 
+}
+.contents{
+    margin: auto;
+}
+
+#pwdChk1, #pwdChk2, #idChk1, #nameChk1 {
+    display: none;
+}
+
+.txt_check {
+    color: red;
+}
+
+    .input_row input{
+        margin-top: 12px;
+       
+    
+    }
+    
+    .item_lft{
+        width: 390px;
+        padding: 10px;
+        height: 50px;
+        appearance: none;
+        box-shadow: none;
+        border-radius: 0;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        background: #fff;
+        font-size: 16px;   
+        color: #555;
+        position: relative;
+    }
+    
+    .item_lft1{
+        width: 380px;
+        margin-bottom: 10px;
+    }
+
+    .input_row_email {
+        display : flex;
+    }
+
+    .gol_wrap {
+        height: 50px;
+        width: 30px;
+        line-height: 50px;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .inp_email {
+        width: 180px;
+        padding: 10px;
+        height: 50px;
+        appearance: none;
+        box-shadow: none;
+        border-radius: 0;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        background: #fff;
+        font-size: 16px;   
+        color: #555;
+        position: relative;
+        display: block;
+    }
+    
+    .input_select_email {
+        width: 180px;
+        height: 50px;
+        margin-top : 10px;
+        margin-right : 10px;
+    }
+    
+    .inp_pw{
+        width: 490px;
+        padding: 10px;
+        height: 50px;
+        appearance: none;
+        box-shadow: none;
+        border-radius: 0;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        background: #fff;
+        font-size: 16px;   
+        color: #555;
+        position: relative;
+        display: block;
+  
+    }
+    
+    .txt{
+        width: 490px;
+        font-weight: normal;
+        outline-style: none;
+        padding: 10px;
+        height: 50px;
+        appearance: none;
+        box-shadow: none;
+        border-radius: 0;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        background: #fff;
+        font-size: 16px;   
+        color: #555;
+        position: relative;
+        flex-wrap: wrap;
+        flex: 1;
+        display: block;
+
+    }
+    .nput_address{
+        display: inline-block;
+    }
+    .item_phone{
+        width: 345px;
+        font-weight: normal;
+        outline-style: none;
+        padding: 10px;
+        height: 50px;
+        appearance: none;
+        box-shadow: none;
+        border-radius: 0;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        background: #fff;
+        font-size: 16px;   
+        color: #555;
+        position: relative;
+        flex-wrap: wrap;
+        flex: 1;
+
+    }
+    
+    
+    .btn_nor{
+      
+        margin: 0px;
+        border: 0 none;
+        cursor: pointer;
+        padding: 0 15px;
+        background: #007ac9;
+        color: #fff;
+        text-align: center;
+        height: 50px;
+        font-size: 16px;  
+    }
+
+    .btn_nor1{
+        width: 140px;
+    }
+
+    .form_align {
+        width: 200px;
+        margin: 0px;
+        padding: 10px;
+        display: inline;
+       
+    }
+
+    .form_align li{
+        display: inline;
+        margin: 2px;
+        
+    }
+    
+    .btn_block_input{
+        margin-top: 20px;
+        margin-right: 20px;
+        width: 230px;
+        padding: 0px;
+        border: 0 none;
+        cursor: pointer;
+        background: #007ac9;
+        color: #fff;
+        text-align: center;
+        height: 60px;
+        font-size: 18px;
+    }

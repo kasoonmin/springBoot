@@ -1,0 +1,44 @@
+package com.springboot.goods.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.springboot.goods.dao.GoodsDAO;
+import com.springboot.goods.vo.GoodsVO;
+import com.springboot.goods.vo.lodgingdetailVO;
+
+@Service("goodsService")
+@Transactional(propagation = Propagation.REQUIRED)
+public class GoodsServiceImpl implements GoodsService {
+	@Autowired
+	GoodsDAO goodsDAO;
+
+	public GoodsServiceImpl() {
+
+	}
+
+	// 상품 추가
+	@Override
+	public int goodsWrite(GoodsVO goods) {
+		return goodsDAO.insertGoods(goods);
+	}
+
+	public int lodgingdetail(lodgingdetailVO lodging) {
+		return goodsDAO.insertlodgingdetail(lodging);
+	}
+
+	// 상품 수정
+//	@Override
+//	public void updateGoods(GoodsVO goodsVO) {
+//		return GoodsDAO.updateGoods(goodsVO);
+//	}
+
+	// 상품 삭제
+
+//	@Override
+//	public void deleteGoods(int goodId) {
+//		return GoodsDAO.deleteGoods(goodId);
+//	}
+}

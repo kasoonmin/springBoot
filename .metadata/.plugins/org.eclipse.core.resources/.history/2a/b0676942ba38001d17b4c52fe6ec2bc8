@@ -1,0 +1,5 @@
+package com.springboot.goods.service;
+
+public interface GoodsService {
+
+}
